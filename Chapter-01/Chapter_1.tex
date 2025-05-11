@@ -1,0 +1,249 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage{amsmath,amsfonts,amscd,amssymb,epsf,color,enumerate,graphicx,url}
+\setlength{\oddsidemargin}{-0.2in}%
+\setlength{\evensidemargin}{-0.2in}%
+\setlength{\textwidth}{6.6in}%
+\setlength{\topmargin}{-0.5in}%
+ \setlength{\textheight}{9.5in}%
+ \definecolor{orange}{rgb}{1,0.5,0}
+ \pagestyle{plain}
+\linespread{1.3}
+\usepackage[small]{caption}
+\newcommand{\pa}{\partial}
+\newcommand{\va}{\vspace{0.4cm}}
+\newcommand{\di}{\displaystyle}
+\newcommand{\disp}{\displaystyle}
+
+
+% turn on \answertrue to show the solution
+% turn on \answerfalse to hide the solution
+\newif\ifanswer
+\answertrue
+%\answerfalse
+
+
+
+\begin{document}
+\noindent {\footnotesize Hands-On Machine Learning}\hspace{10.5cm} {\footnotesize Solutions}
+
+\vspace{0.5cm}
+\hspace{5.5cm}\textbf{\large Exercises in Chapter 1}
+\vspace{0.5cm}
+
+\begin{enumerate}[1.]
+
+\item How would you define machine learning?
+
+\ifanswer
+\noindent {\bf Solution}
+\begin{enumerate}[(i)]
+\item The field of study that gives computers the ability to learn without being explicitly programmed.
+\item A computer program is said to learn from experience $E$ with respect to some task $T$ and some performance measure $P$,
+if its performance on $T$, as measured by $P$, improves with experience $E$.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+\item Can you name four types of applications where it shines?
+
+\ifanswer
+\noindent {\bf Solution}
+\begin{enumerate}[(i)]
+\item Detecting scamming emails.
+\item Detecting credit card fraud.
+\item Summarizing long documents automatically.
+\item Classifying images of products.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+\item What is a labeled training set?
+
+\ifanswer
+\noindent {\bf Solution}
+A labeled training set is a training set where the training data are labeled, that is,
+we tell the machine how they are classified.
+\vspace{1cm}
+
+
+
+\item What are the two most common supervised tasks?
+
+\ifanswer
+\noindent {\bf Solution}
+Classification and Predicting numeric value.
+\vspace{1cm}
+
+
+
+\item Can you name four common unsupervised tasks?
+
+\ifanswer
+\noindent {\bf Solution}
+Clustering algorithm, visualization algorithm, anomaly detection and association rule learning.
+\vspace{1cm}
+
+
+
+\item What type of algorithm would you use to allow a robot to walk in various unknown terrains?
+
+\ifanswer
+\noindent {\bf Solution}
+Reinforcement learning.
+\vspace{1cm}
+
+
+
+\item What type of algorithm would you use to segment your customers into multiple groups?
+
+\ifanswer
+\noindent {\bf Solution}
+Unsupervised learning.
+\vspace{1cm}
+
+
+
+\item Would you frame the problem of spam detection as a supervised learning problem or an unsupervised learning problem?
+
+\ifanswer
+\noindent {\bf Solution}
+Supervised learning problem.
+\vspace{1cm}
+
+
+
+\item What is an online learning system?
+
+\ifanswer
+\noindent {\bf Solution}
+An online learning system is a system that you train incrementally by feeding data instances sequentially,
+either individually or in small groups called \textit{mini-batches}.
+\vspace{1cm}
+
+
+
+\item What is out-of-core learning?
+
+\ifanswer
+\noindent {\bf Solution}
+Out-of-core learning means to use online learning algorithms to train models on huge datasets that cannot fit in one machine's main memory.
+The algorithm loads part of the data, runs a training step on that data, and repeats the process until it has run on all of the data.
+\vspace{1cm}
+
+
+
+\item What type of algorithm relies on a similarity measure to make predictions?
+
+\ifanswer
+\noindent {\bf Solution}
+Instance-based learning.
+\vspace{1cm}
+
+
+
+\item What is the difference between a model parameter and a model hyperparameter?
+
+\ifanswer
+\noindent {\bf Solution}
+\begin{enumerate}[(i)]
+\item A model parameter is a parameter that effects directly on the model.
+\item A model hyperparameter is a parameter of a learning algorithm,
+and is applied as the amount of regularization during learning.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+\item What do model-based algorithms search for? What is the most common strategy they use to succeed? How do they make predictions?
+
+\ifanswer
+\noindent {\bf Solution}
+\begin{enumerate}[(i)]
+\item A Model-based algorithm is used to build a model of the examples and to make predictions with the model.
+\item The strategy is to minimize the cost function that measures how bad the model is.
+\item Given a new instance, the model uses the features of the new instance and the model parameters to make the prediction.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+\item Can you name four of the main challenges in machine learning?
+
+\ifanswer
+\noindent {\bf Solution}
+Insufficient challenges, nonrepresentative training data, overfitting the training data and
+underfitting the training data.
+\vspace{1cm}
+
+
+
+\item If your model performs great on the training data but generalizes poorly to new instances, what is happening? Can you name three possible solutions?
+
+\ifanswer
+\noindent {\bf Solution}
+\begin{enumerate}[(i)]
+\item The training data are not representative of the new instances the model predicts on.
+\item The training data is overfit.
+\item The amount of training data is insufficient.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+\item What is a test set, and why would you want to use it?
+
+\ifanswer
+\noindent {\bf Solution}
+\begin{enumerate}[(i)]
+\item The test set is a subset of our data where we test the model that is trained using the training set.
+\item We use the test set to get an estimate generalization error of our model on new cases.
+\end{enumerate}
+\vspace{1cm}
+
+
+
+\item What is the purpose of a validation set?
+
+\ifanswer
+\noindent {\bf Solution}
+The validation set is used when we need to test multiple models and hyperparameters.
+If we test all hyperparameters in the test set, we will get the best model and hyperparameter
+for the particular test set, but not for new cases in production. So, we split a validation
+set and use it to get the best performed model and hyperparameter, before testing using the
+test set.
+\vspace{1cm}
+
+
+
+\item What is the train-dev set, when do you need it, and how do you need it?
+
+\ifanswer
+\noindent {\bf Solution}
+The train-sev set is a subset of the training set. It is used when we cannot recognize it is because our model has overfit the
+training set, or it is due to the mismatch between the training data and cases in production.
+After the model is trained on the training set (exclude the train-dev set), we evaluate it on the
+train-dev set. If the model performs bad, we know the problem is the overfitting the training data. Otherwise,
+we test it on the validation set, and if it performs bad, the problem is the mismatch.
+\vspace{1cm}
+
+
+
+\item What can go wrong if you tune hyperparameters using the test set?
+
+\ifanswer
+\noindent {\bf Solution}
+As said in Exercise 17, if we tune hyperparameters using the test set, the hyperparameter
+works best particularly for the test set, but it is likely that it will not work well for new
+cases in production.
+\vspace{1cm}
+
+
+
+
+
+
+\end{enumerate}
+
+\end{document}
