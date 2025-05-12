@@ -7,7 +7,7 @@ The goal of this project is to provide solutions to all exercises from *Hands-On
 ## Project Structure
 
 ```
-Hands-On-Machine-Learning-Solutions/
+ML_Solutions/
 ├── Chapter-01/
 │   ├── exercise_1_1.py
 │   └── exercise_1_2.py
@@ -24,18 +24,19 @@ Hands-On-Machine-Learning-Solutions/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/Hands-On-Machine-Learning-Solutions.git
+   git clone https://github.com/xing-pangdingyu/ML_Solutions.git
    ```
 2. Navigate to the chapter folder of interest:
 
    ```bash
-   cd Hands-On-Machine-Learning-Solutions/Chapter-01
+   cd ML_Solutions/Chapter-01
    ```
 3. Open any solution file (e.g., `exercise_1_1.py`) and review the code and comments.
 
 ## Technologies Used
 
-* **Python 3.x**
+* **Python 3.X**
+* **Statictics**
 * **Scikit-Learn**
 * **Keras**
 * **TensorFlow**
